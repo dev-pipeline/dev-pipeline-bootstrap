@@ -18,7 +18,7 @@ setup(
 
     entry_points={
         'devpipeline.drivers': [
-            'bootstrap = devpipeline_bootstrap.bootstrap:main'
+            'bootstrap = devpipeline_bootstrap.bootstrap:_BOOTSTRAP_COMMAND'
         ]
     },
 

@@ -17,5 +17,7 @@ def main(args=None):
     devpipeline_core.command.execute_command(builder, args)
 
 
+_BOOTSTRAP_COMMAND = (main, "Checkout and build a project.  This is most useful right after a fresh configure.")
+
 if __name__ == '__main__':
     main()
