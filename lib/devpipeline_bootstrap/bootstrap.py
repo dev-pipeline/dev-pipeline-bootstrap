@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-"""This module does a checkout and build of the packages given in the config file."""
+
+"""
+This module does a checkout and build of the packages given in the config file.
+"""
+
 import devpipeline_core.command
 
 import devpipeline_build.builder
@@ -17,7 +21,10 @@ def main(args=None):
     devpipeline_core.command.execute_command(builder, args)
 
 
-_BOOTSTRAP_COMMAND = (main, "Checkout and build a project.  This is most useful right after a fresh configure.")
+_BOOTSTRAP_COMMAND = (
+    main,
+    "Checkout and build a project.  "
+    "This is most useful right after a fresh configure.")
 
 if __name__ == '__main__':
     main()

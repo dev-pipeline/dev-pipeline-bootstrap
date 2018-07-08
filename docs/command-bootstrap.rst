@@ -1,11 +1,12 @@
-build
-=====
+bootstrap
+=========
 
 Synopsis
 --------
-.. code::
+::
 
-    dev-pipeline bootstrap [-h] [--executor EXECUTOR]
+    dev-pipeline bootstrap [-h] [--dependencies DEPENDENCIES]
+                           [--executor EXECUTOR]
                            [targets [targets ...]]
 
 
@@ -21,21 +22,13 @@ If no targets are specified, all targets will be used.
 
 Options
 -------
-  -h, --help           show this help message and exit
-  --executor EXECUTOR  The amount of verbosity to use. Options are "quiet"
-                       (print no extra information), "verbose" (print
-                       additional information), "dry-run" (print commands to
-                       execute, but don't run them), and "silent" (print
-                       nothing). Regardless of this option, errors are always
-                       printed. (default: quiet)
-
+  -h, --help            show this help message and exit
+  --dependencies DEPENDENCIES
+                        Control how build dependencies are handled. (default:
+                        deep)
+  --executor EXECUTOR   The method to execute commands. (default: quiet)
 
 
 Config Options
 --------------
-No extra options are consumed.  See the build_ and checkout_ documentation for
-available options.
-
-
-.. _build: build.rst
-.. _checkout: checkout.rst
+No extra options are consumed.
