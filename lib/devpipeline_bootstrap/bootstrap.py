@@ -9,6 +9,12 @@ import devpipeline_core.command
 import devpipeline_build.builder
 import devpipeline_scm.scm
 
+_MAJOR = 0
+_MINOR = 2
+_PATCH = 0
+
+_STRING = "{}.{}.{}".format(_MAJOR, _MINOR, _PATCH)
+
 
 def main(args=None):
     # pylint: disable=bad-continuation,missing-docstring
@@ -18,6 +24,7 @@ def main(args=None):
     ],
         prog="dev-pipeline bootstrap",
         description="Checkout and build packages")
+    builder.set_version(_STRING)
     devpipeline_core.command.execute_command(builder, args)
 
 
