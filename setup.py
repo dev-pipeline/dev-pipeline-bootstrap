@@ -5,19 +5,21 @@ from setuptools import setup, find_packages
 with open('README.rst') as f:
     long_description = f.read()
 
+_VERSION = "0.4.0"
+
 setup(
     name="dev-pipeline-bootstrap",
-    version="0.3.0",
+    version=_VERSION,
     package_dir={
         "": "lib"
     },
     packages=find_packages("lib"),
 
     install_requires=[
-        'dev-pipeline-configure >= 0.3.0',
-        'dev-pipeline-core >= 0.3.0',
-        'dev-pipeline-build >= 0.3.0',
-        'dev-pipeline-scm >= 0.3.0'
+        "dev-pipeline-configure >= {}".format(_VERSION),
+        "dev-pipeline-core >= {}".format(_VERSION),
+        "dev-pipeline-build >= {}".format(_VERSION),
+        "dev-pipeline-scm >= {}".format(_VERSION)
     ],
 
     entry_points={
