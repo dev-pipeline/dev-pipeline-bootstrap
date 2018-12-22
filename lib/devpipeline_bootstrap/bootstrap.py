@@ -19,13 +19,12 @@ _STRING = "{}.{}.{}".format(_MAJOR, _MINOR, _PATCH)
 
 def main(args=None, config_fn=devpipeline_configure.cache.update_cache):
     # pylint: disable=bad-continuation,missing-docstring
-    builder = devpipeline_core.command.make_command([
-        devpipeline_scm.scm.scm_task,
-        devpipeline_build.builder.build_task
-    ],
+    builder = devpipeline_core.command.make_command(
+        [devpipeline_scm.scm.scm_task, devpipeline_build.builder.build_task],
         config_fn=config_fn,
         prog="dev-pipeline bootstrap",
-        description="Checkout and build packages")
+        description="Checkout and build packages",
+    )
     builder.set_version(_STRING)
     devpipeline_core.command.execute_command(builder, args)
 
@@ -33,7 +32,8 @@ def main(args=None, config_fn=devpipeline_configure.cache.update_cache):
 _BOOTSTRAP_COMMAND = (
     main,
     "Checkout and build a project.  "
-    "This is most useful right after a fresh configure.")
+    "This is most useful right after a fresh configure.",
+)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
