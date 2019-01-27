@@ -11,7 +11,7 @@ import devpipeline_build.builder
 import devpipeline_scm.scm
 
 _MAJOR = 0
-_MINOR = 3
+_MINOR = 5
 _PATCH = 0
 
 _STRING = "{}.{}.{}".format(_MAJOR, _MINOR, _PATCH)
