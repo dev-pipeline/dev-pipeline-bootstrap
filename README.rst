@@ -2,6 +2,8 @@ dev-pipeline-bootstrap
 ======================
 |codacy|
 |code-climate|
+|lgtm|
+|lgtm-quality|
 
 A `dev-pipeline`_ plugin to add the :code:`bootstrap` command.
 :code:`bootstrap` will update checkouts, then perform a build.  It's similar
@@ -36,10 +38,13 @@ documentation_.
 
 .. |codacy| image:: https://api.codacy.com/project/badge/Grade/9521e63659524c70a1e8db68aa72a01f
     :target: https://www.codacy.com/app/snewell/dev-pipeline-bootstrap?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=dev-pipeline/dev-pipeline-bootstrap&amp;utm_campaign=Badge_Grade
-
 .. |code-climate| image:: https://api.codeclimate.com/v1/badges/3a5232de060ffe316d1e/maintainability
    :target: https://codeclimate.com/github/dev-pipeline/dev-pipeline-bootstrap/maintainability
    :alt: Maintainability
+.. |lgtm| image:: https://img.shields.io/lgtm/alerts/g/dev-pipeline/dev-pipeline-bootstrap.svg?logo=lgtm&logoWidth=18
+    :target: https://lgtm.com/projects/g/dev-pipeline/dev-pipeline-bootstrap/alerts/
+.. |lgtm-quality| image:: https://img.shields.io/lgtm/grade/python/g/dev-pipeline/dev-pipeline-bootstrap.svg?logo=lgtm&logoWidth=18
+    :target: https://lgtm.com/projects/g/dev-pipeline/dev-pipeline-bootstrap/context:python
 
 .. _dev-pipeline: https://github.com/dev-pipeline/dev-pipeline
 .. _documentation: docs/command-bootstrap.rst
