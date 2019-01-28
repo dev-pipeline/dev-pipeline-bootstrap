@@ -20,10 +20,7 @@ _STRING = "{}.{}.{}".format(_MAJOR, _MINOR, _PATCH)
 def main(args=None, config_fn=devpipeline_configure.cache.update_cache):
     # pylint: disable=bad-continuation,missing-docstring
     builder = devpipeline_core.command.make_command(
-        [
-            ("checkout", devpipeline_scm.scm.checkout_task),
-            ("build", devpipeline_build.builder.build_task),
-        ],
+        [devpipeline_scm.scm.CHECKOUT_TASK, devpipeline_build.builder.BUILD_TASK],
         config_fn=config_fn,
         prog="dev-pipeline bootstrap",
         description="Checkout and build packages",
