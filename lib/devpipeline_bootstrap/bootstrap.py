@@ -5,7 +5,7 @@ This module does a checkout and build of the packages given in the config file.
 """
 
 import devpipeline_core.command
-import devpipeline_configure.cache
+import devpipeline_configure.load
 
 import devpipeline_build.builder
 import devpipeline_scm.scm
@@ -17,7 +17,7 @@ _PATCH = 0
 _STRING = "{}.{}.{}".format(_MAJOR, _MINOR, _PATCH)
 
 
-def main(args=None, config_fn=devpipeline_configure.cache.update_cache):
+def main(args=None, config_fn=devpipeline_configure.load.update_cache):
     # pylint: disable=bad-continuation,missing-docstring
     builder = devpipeline_core.command.make_command(
         [devpipeline_scm.scm.CHECKOUT_TASK, devpipeline_build.builder.BUILD_TASK],
