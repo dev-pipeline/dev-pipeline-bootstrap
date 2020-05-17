@@ -17,23 +17,21 @@ _PATCH = 0
 _STRING = "{}.{}.{}".format(_MAJOR, _MINOR, _PATCH)
 
 
-def main(args=None, config_fn=devpipeline_configure.load.update_cache):
-    # pylint: disable=bad-continuation,missing-docstring
-    builder = devpipeline_core.command.make_command(
+def _configure(parser):
+    devpipeline_core.command.setup_task_parser(parser)
+    devpipeline_core.command.add_version_info(parser, _STRING)
+
+
+def _execute(arguments):
+    devpipeline_core.command.process_tasks(
+        arguments,
         [devpipeline_scm.scm.CHECKOUT_TASK, devpipeline_build.builder.BUILD_TASK],
-        config_fn=config_fn,
-        prog="dev-pipeline bootstrap",
-        description="Checkout and build packages",
+        devpipeline_configure.load.update_cache,
     )
-    builder.set_version(_STRING)
-    devpipeline_core.command.execute_command(builder, args)
 
 
 _BOOTSTRAP_COMMAND = (
-    main,
-    "Checkout and build a project.  "
-    "This is most useful right after a fresh configure.",
+    "Checkout and build a project.  This is most useful right after a fresh configure.",
+    _configure,
+    _execute,
 )
-
-if __name__ == "__main__":
-    main()
